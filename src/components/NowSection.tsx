@@ -10,9 +10,7 @@ const NowSection = () => {
         </div>
         
         <div className="space-y-8 text-center">
-          <p className="text-cosmic text-lg leading-relaxed whitespace-pre-line">This link holds what is moving through me these days  
-a living reflection of   
-current focus, evolving emphasis & the quiet momentum of unfolding work.</p>
+          <p className="text-cosmic text-lg leading-relaxed whitespace-pre-line">This link holds what is moving through me these days - a living reflection of focus, evolving emphasis & the quiet momentum of unfolding work.</p>
           
           <div className="relative group">
             <a href="https://tana.pub/Jr2l815neNNi/now-page-of-jakob-possert-bienzle" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
