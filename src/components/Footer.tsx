@@ -11,7 +11,10 @@ const Footer = () => {
           </p>
         </div>
         
-        <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent opacity-40 mx-auto"></div>
+        <div className="flex flex-col items-center mx-auto">
+          <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent opacity-40"></div>
+          <div className="w-0 h-0 border-l-[2px] border-r-[2px] border-t-[3px] border-l-transparent border-r-transparent border-t-primary opacity-40 -mt-px"></div>
+        </div>
         
         <p className="text-muted-foreground text-xs">
           © {new Date().getFullYear()} Jakob
