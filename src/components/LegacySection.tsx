@@ -1,8 +1,6 @@
 import { Archive } from "lucide-react";
-
 const LegacySection = () => {
-  return (
-    <section className="py-20 px-6 max-w-2xl mx-auto">
+  return <section className="py-20 px-6 max-w-2xl mx-auto">
       <div className="text-center space-y-12">
         <div>
           <h2 className="font-heading text-4xl md:text-5xl font-light mb-6">
@@ -18,12 +16,8 @@ const LegacySection = () => {
           </p>
           
           <div className="relative group">
-            <a 
-              href="#" // Jakob will provide legacy website URL
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link"
-            >
+            <a href="#" // Jakob will provide legacy website URL
+          target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link">
               <div className="flex items-center justify-center space-x-3 mb-4">
                 <Archive className="w-6 h-6 text-primary" />
                 <h3 className="font-heading text-xl text-cosmic">
@@ -35,19 +29,13 @@ const LegacySection = () => {
                 Previous expressions, archived contexts, and the journey that led here.
               </p>
               
-              <div className="mt-6 text-xs text-muted-foreground uppercase tracking-wide">
-                Historical Context
-              </div>
+              
             </a>
           </div>
           
-          <p className="text-ethereal text-sm italic">
-            URL to be provided by Jakob
-          </p>
+          <p className="text-ethereal text-sm italic">jakobpossert.wordpress.com</p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LegacySection;

@@ -1,14 +1,11 @@
 const Footer = () => {
-  return (
-    <footer className="py-12 px-6 border-t border-border/30">
+  return <footer className="py-12 px-6 border-t border-border/30">
       <div className="max-w-2xl mx-auto text-center space-y-6">
         <div className="space-y-2">
           <p className="text-ethereal text-sm">
             Built with intention
           </p>
-          <p className="text-muted-foreground text-xs">
-            No cookies, no analytics, no newsletter—just a doorway
-          </p>
+          <p className="text-muted-foreground text-xs">No cookies, no analytics, no newsletter - just a doorway</p>
         </div>
         
         <div className="flex flex-col items-center mx-auto">
@@ -20,8 +17,6 @@ const Footer = () => {
           © {new Date().getFullYear()} Jakob
         </p>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
