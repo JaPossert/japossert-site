@@ -1,8 +1,6 @@
 import { ExternalLink } from "lucide-react";
-
 const VortexSection = () => {
-  return (
-    <section className="py-20 px-6 max-w-2xl mx-auto">
+  return <section className="py-20 px-6 max-w-2xl mx-auto">
       <div className="text-center space-y-12">
         <div>
           <h2 className="font-heading text-4xl md:text-5xl font-light mb-6">
@@ -12,18 +10,11 @@ const VortexSection = () => {
         </div>
         
         <div className="space-y-8">
-          <p className="text-cosmic text-lg leading-relaxed">
-            Where most energy flows right now—a living project that draws 
-            attention, intention, and creative force.
-          </p>
+          <p className="text-cosmic text-lg leading-relaxed">Where most of my energy flows right now
+a living project that draws attention, intention, and creative force.</p>
           
           <div className="relative group">
-            <a 
-              href="https://idea2.life" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link"
-            >
+            <a href="https://idea2.life" target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link">
               <div className="flex items-center justify-center space-x-3 mb-4">
                 <h3 className="font-heading text-2xl md:text-3xl text-primary">
                   idea2.life
@@ -43,8 +34,6 @@ const VortexSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default VortexSection;
