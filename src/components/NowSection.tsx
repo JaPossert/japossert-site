@@ -10,8 +10,8 @@ const NowSection = () => {
         </div>
         
         <div className="space-y-8 text-center">
-          <p className="text-cosmic text-lg leading-relaxed">This link holds what is moving through me these days  
-a living reflection of   
+          <p className="text-cosmic text-lg leading-relaxed whitespace-pre-line">This link holds what is moving through me these days  
+a living reflection of   
 current focus, evolving emphasis & the quiet momentum of unfolding work.</p>
           
           <div className="relative group">
