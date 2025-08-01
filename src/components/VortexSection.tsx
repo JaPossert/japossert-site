@@ -23,9 +23,7 @@ const VortexSection = () => {
               
               <p className="text-ethereal leading-relaxed">The infrastructure to guide inspiration to reality. Possibility meets form, and vision finds expression.</p>
               
-              <div className="mt-6 text-xs text-muted-foreground uppercase tracking-wide">
-                Living Project
-              </div>
+              
             </a>
           </div>
         </div>

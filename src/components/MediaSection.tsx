@@ -1,8 +1,6 @@
 import { Play, Image } from "lucide-react";
-
 const MediaSection = () => {
-  return (
-    <section className="py-20 px-6 max-w-2xl mx-auto">
+  return <section className="py-20 px-6 max-w-2xl mx-auto">
       <div className="space-y-16">
         
         {/* Intro Video */}
@@ -15,9 +13,7 @@ const MediaSection = () => {
           </div>
           
           <div className="space-y-6">
-            <p className="text-cosmic text-lg leading-relaxed">
-              Who I am, now. No bio, just presence.
-            </p>
+            <p className="text-cosmic text-lg leading-relaxed">A feel for how I move - in front of a camera.</p>
             
             <div className="relative group">
               <div className="p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
@@ -25,9 +21,7 @@ const MediaSection = () => {
                   <Play className="w-6 h-6 text-primary" />
                   <span className="text-cosmic">Intro Video</span>
                 </div>
-                <p className="text-ethereal text-sm">
-                  Video link to be added by Jakob
-                </p>
+                <p className="text-ethereal text-sm">bit.ly/japossert_intro</p>
               </div>
             </div>
           </div>
@@ -57,8 +51,6 @@ const MediaSection = () => {
         </div>
         
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MediaSection;
