@@ -21,10 +21,8 @@ const VortexSection = () => {
                 <ExternalLink className="w-5 h-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
               </div>
               
-              <p className="text-ethereal leading-relaxed">
-                An ecosystem for ideas that want to become real. 
-                Where possibility meets form, and vision finds expression.
-              </p>
+              <p className="text-ethereal leading-relaxed">The infrastructure to guide inspiration to reality - 
+where possibility meets form, and vision finds expression.</p>
               
               <div className="mt-6 text-xs text-muted-foreground uppercase tracking-wide">
                 Living Project
