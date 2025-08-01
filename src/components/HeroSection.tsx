@@ -15,10 +15,8 @@ const HeroSection = () => {
           </h1>
           
           <div className="max-w-md mx-auto space-y-3">
-            <p className="text-cosmic text-lg font-light">
-              A doorway for the curious
-            </p>
-            <p className="text-ethereal text-sm">Resonating?</p>
+            <p className="text-cosmic text-lg font-light">Doorway for Resonance</p>
+            <p className="text-ethereal text-sm">now or later</p>
           </div>
         </div>
         
