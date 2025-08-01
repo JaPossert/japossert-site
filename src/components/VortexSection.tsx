@@ -4,7 +4,7 @@ const VortexSection = () => {
       <div className="text-center space-y-12">
         <div>
           <h2 className="font-heading text-4xl md:text-5xl font-light mb-6">
-            Current <span className="aurora-text">Vortex</span>
+            My Main <span className="aurora-text">Vortex</span>
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
         </div>
