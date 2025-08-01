@@ -1,61 +1,53 @@
-import { 
-  Linkedin, 
-  Youtube, 
-  Twitter, 
-  ExternalLink, 
-  Users, 
-  UserCircle 
-} from "lucide-react";
+import { Linkedin, Youtube, Twitter, ExternalLink, Users, UserCircle } from "lucide-react";
 
 // Note: Some icons may need to be replaced with actual brand icons later
 const SocialSection = () => {
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: "#", // Jakob will provide
-      description: "Professional presence"
-    },
-    {
-      name: "YouTube",
-      icon: Youtube,
-      url: "#", // Jakob will provide
-      description: "Video explorations"
-    },
-    {
-      name: "IYG",
-      icon: Users,
-      url: "#", // Jakob will provide
-      description: "Community space"
-    },
-    {
-      name: "Personal Intro",
-      icon: UserCircle,
-      url: "#", // Jakob will provide
-      description: "Introduction"
-    },
-    {
-      name: "X / Twitter",
-      icon: Twitter,
-      url: "#", // Jakob will provide
-      description: "Brief thoughts"
-    },
-    {
-      name: "Bluesky",
-      icon: ExternalLink, // Placeholder, will need actual Bluesky icon
-      url: "#", // Jakob will provide
-      description: "Open social"
-    },
-    {
-      name: "Mastodon",
-      icon: ExternalLink, // Placeholder, will need actual Mastodon icon
-      url: "#", // Jakob will provide
-      description: "Federated presence"
-    }
-  ];
-
-  return (
-    <section className="py-20 px-6 max-w-4xl mx-auto">
+  const socialLinks = [{
+    name: "LinkedIn",
+    icon: Linkedin,
+    url: "#",
+    // Jakob will provide
+    description: "Professional presence"
+  }, {
+    name: "YouTube",
+    icon: Youtube,
+    url: "#",
+    // Jakob will provide
+    description: "Video explorations"
+  }, {
+    name: "IYG",
+    icon: Users,
+    url: "#",
+    // Jakob will provide
+    description: "Community space"
+  }, {
+    name: "Personal Intro",
+    icon: UserCircle,
+    url: "#",
+    // Jakob will provide
+    description: "Introduction"
+  }, {
+    name: "X / Twitter",
+    icon: Twitter,
+    url: "#",
+    // Jakob will provide
+    description: "Brief thoughts"
+  }, {
+    name: "Bluesky",
+    icon: ExternalLink,
+    // Placeholder, will need actual Bluesky icon
+    url: "#",
+    // Jakob will provide
+    description: "Open social"
+  }, {
+    name: "Mastodon",
+    icon: ExternalLink,
+    // Placeholder, will need actual Mastodon icon
+    url: "#",
+    // Jakob will provide
+    description: "Federated presence"
+  }];
+  return <section className="py-20 px-6 max-w-4xl mx-auto">
       <div className="text-center space-y-12">
         <div>
           <h2 className="font-heading text-4xl md:text-5xl font-light mb-6">
@@ -68,16 +60,9 @@ const SocialSection = () => {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {socialLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative p-6 rounded-lg bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link"
-              >
+          {socialLinks.map(link => {
+          const Icon = link.icon;
+          return <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="group relative p-6 rounded-lg bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link">
                 <div className="text-center space-y-3">
                   <Icon className="w-8 h-8 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
                   <div>
@@ -92,17 +77,12 @@ const SocialSection = () => {
                     {link.description}
                   </div>
                 </div>
-              </a>
-            );
-          })}
+              </a>;
+        })}
         </div>
         
-        <p className="text-ethereal text-sm italic">
-          Links to be updated by Jakob
-        </p>
+        <p className="text-ethereal text-sm italic">Links to be updated</p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SocialSection;
