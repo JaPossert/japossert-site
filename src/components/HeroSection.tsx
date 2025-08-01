@@ -16,7 +16,7 @@ const HeroSection = () => {
           
           <div className="max-w-md mx-auto space-y-3">
             <p className="text-cosmic text-lg font-light">Doorway for Resonance</p>
-            <p className="text-ethereal text-sm">now or later</p>
+            <p className="text-ethereal text-sm">today or tomorrow</p>
           </div>
         </div>
         
