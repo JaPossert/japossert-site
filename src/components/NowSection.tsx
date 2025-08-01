@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-
 const NowSection = () => {
   return <section className="py-20 px-6 max-w-2xl mx-auto">
       <div className="space-y-12">
@@ -14,39 +13,13 @@ const NowSection = () => {
           <p className="text-cosmic text-lg leading-relaxed">This link holds what is present - a living reflection of current focus, evolving emphasis, and the quiet momentum of unfolding work.</p>
           
           <div className="relative group">
-            <a 
-              href="https://tana.pub/Jr2l815neNNi/now-page-of-jakob-possert-bienzle" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
-            >
+            <a href="https://tana.pub/Jr2l815neNNi/now-page-of-jakob-possert-bienzle" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
               <span className="font-heading text-xl">Now Page</span>
               <ExternalLink className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
             </a>
           </div>
           <div className="relative group">
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link"
-            >
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <h3 className="font-heading text-2xl md:text-3xl text-primary">
-                  Project Name
-                </h3>
-                <ExternalLink className="w-5 h-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-              </div>
-              
-              <p className="text-ethereal leading-relaxed">
-                Description of the second project or vortex. 
-                Another space where energy flows and ideas take shape.
-              </p>
-              
-              <div className="mt-6 text-xs text-muted-foreground uppercase tracking-wide">
-                Living Project
-              </div>
-            </a>
+            
           </div>
         </div>
       </div>
