@@ -1,10 +1,11 @@
 const HeroSection = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Subtle animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="floating absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
-        <div className="floating absolute top-3/4 right-1/4 w-24 h-24 rounded-full bg-secondary/10 blur-xl" style={{ animationDelay: '2s' }}></div>
+        <div className="floating absolute top-3/4 right-1/4 w-24 h-24 rounded-full bg-secondary/10 blur-xl" style={{
+        animationDelay: '2s'
+      }}></div>
       </div>
       
       <div className="text-center space-y-8 z-10">
@@ -17,9 +18,7 @@ const HeroSection = () => {
             <p className="text-cosmic text-lg font-light">
               A doorway for the curious
             </p>
-            <p className="text-ethereal text-sm">
-              Resonance over promotion
-            </p>
+            <p className="text-ethereal text-sm">Resonating?</p>
           </div>
         </div>
         
@@ -28,8 +27,6 @@ const HeroSection = () => {
           <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent opacity-60"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
