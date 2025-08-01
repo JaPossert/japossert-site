@@ -10,8 +10,9 @@ const VortexSection = () => {
         </div>
         
         <div className="space-y-8">
-          <p className="text-cosmic text-lg leading-relaxed">Where most of my energy flows right now
-a living project that draws attention, intention, and creative force.</p>
+          <p className="text-cosmic text-lg leading-relaxed">Where most of my energy flows right now 
+a living project that 
+draws attention, intention, and creative force.</p>
           
           <div className="relative group">
             <a href="https://idea2.life" target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link">
