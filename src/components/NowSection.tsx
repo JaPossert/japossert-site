@@ -15,6 +15,17 @@ const NowSection = () => {
           
           <div className="relative group">
             <a 
+              href="https://tana.pub/Jr2l815neNNi/now-page-of-jakob-possert-bienzle" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
+            >
+              <span className="font-heading text-xl">Now Page</span>
+              <ExternalLink className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
+          <div className="relative group">
+            <a 
               href="#" 
               target="_blank" 
               rel="noopener noreferrer"
