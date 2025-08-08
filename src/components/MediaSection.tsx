@@ -32,7 +32,7 @@ const MediaSection = () => {
         <div className="text-center space-y-8">
           <div>
             <h3 className="font-heading text-2xl md:text-3xl font-light mb-6">
-              <span className="aurora-text">Presence</span>
+              <span className="aurora-text">Portrait</span>
             </h3>
             <div className="w-8 h-px bg-primary mx-auto mb-8"></div>
           </div>
