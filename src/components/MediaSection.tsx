@@ -1,4 +1,5 @@
-import { Play, Image } from "lucide-react";
+import { Play } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 const MediaSection = () => {
   return <section className="py-20 px-6 max-w-2xl mx-auto">
       <div className="space-y-16">
@@ -38,14 +39,18 @@ const MediaSection = () => {
           
           <div className="relative group">
             <div className="p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <Image className="w-6 h-6 text-primary" />
-                <span className="text-cosmic">Image</span>
-              </div>
-              <p className="text-ethereal text-sm">
-                A single photo—not posed, not branded.<br />
-                Image link to be added by Jakob
-              </p>
+              <figure className="rounded-md overflow-hidden border border-border/20 bg-muted/10">
+                <AspectRatio ratio={16 / 9}>
+                  <img
+                    src="/images/presence.jpg"
+                    alt="Jakob Possert Bienzle — presence portrait"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+                <figcaption className="text-ethereal text-xs p-3 text-center">Presence — unposed, unbranded</figcaption>
+              </figure>
             </div>
           </div>
         </div>
