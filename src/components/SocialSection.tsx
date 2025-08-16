@@ -81,7 +81,7 @@ const SocialSection = () => {
         })}
         </div>
         
-        <p className="text-ethereal text-sm italic">Links to be updated</p>
+        <p className="text-ethereal text-sm italic">(Links to be updated)</p>
       </div>
     </section>;
 };

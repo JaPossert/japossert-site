@@ -41,15 +41,9 @@ const MediaSection = () => {
             <div className="p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
               <figure className="rounded-md overflow-hidden border border-border/20 bg-muted/10">
                 <AspectRatio ratio={1 / 1}>
-                  <img
-                    src="/lovable-uploads/a1a9ac97-cceb-4ef8-b3f0-cf42cadaf272.png"
-                    alt="Jakob Possert Bienzle — presence portrait"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/lovable-uploads/a1a9ac97-cceb-4ef8-b3f0-cf42cadaf272.png" alt="Jakob Possert Bienzle — presence portrait" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </AspectRatio>
-                <figcaption className="text-ethereal text-xs p-3 text-center">Presence — unposed, unbranded</figcaption>
+                
               </figure>
             </div>
           </div>
