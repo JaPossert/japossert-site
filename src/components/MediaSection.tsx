@@ -42,7 +42,7 @@ const MediaSection = () => {
               <figure className="rounded-md overflow-hidden border border-border/20 bg-muted/10">
                 <AspectRatio ratio={16 / 9}>
                   <img
-                    src="/images/presence.jpg"
+                    src="/lovable-uploads/a1a9ac97-cceb-4ef8-b3f0-cf42cadaf272.png"
                     alt="Jakob Possert Bienzle — presence portrait"
                     loading="lazy"
                     decoding="async"
