@@ -40,7 +40,7 @@ const MediaSection = () => {
           <div className="relative group">
             <div className="p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
               <figure className="rounded-md overflow-hidden border border-border/20 bg-muted/10">
-                <AspectRatio ratio={16 / 9}>
+                <AspectRatio ratio={1 / 1}>
                   <img
                     src="/lovable-uploads/a1a9ac97-cceb-4ef8-b3f0-cf42cadaf272.png"
                     alt="Jakob Possert Bienzle — presence portrait"
