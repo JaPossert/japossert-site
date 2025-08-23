@@ -14,7 +14,7 @@ const MediaSection = () => {
           </div>
           
           <div className="space-y-6">
-            <p className="text-cosmic text-lg leading-relaxed">A feel for how I move - in front of a camera.</p>
+            <p className="text-cosmic text-lg leading-relaxed">May this help you to get a feel for how I move (in front of a camera ;)</p>
             
             <div className="relative group">
               <div className="p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
