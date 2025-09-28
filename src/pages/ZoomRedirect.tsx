@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import zoomThumbnail from '@/assets/zoom-logo-thumbnail.png';
 
 const ZoomRedirect = () => {
   useEffect(() => {
@@ -8,6 +9,11 @@ const ZoomRedirect = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-subtle">
       <div className="text-center">
+        <img 
+          src={zoomThumbnail} 
+          alt="Zoom Meeting" 
+          className="w-24 h-24 mx-auto mb-4 rounded-lg shadow-elegant"
+        />
         <p className="text-cosmic text-lg">Redirecting to Zoom meeting...</p>
       </div>
     </div>
