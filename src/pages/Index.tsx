@@ -4,6 +4,7 @@ import VortexSection from "@/components/VortexSection";
 import MediaSection from "@/components/MediaSection";
 import SocialSection from "@/components/SocialSection";
 import LegacySection from "@/components/LegacySection";
+import HiringSection from "@/components/HiringSection";
 import Footer from "@/components/Footer";
 import ArrowDivider from "@/components/ArrowDivider";
 
@@ -21,6 +22,8 @@ const Index = () => {
       <SocialSection />
       <ArrowDivider />
       <LegacySection />
+      <ArrowDivider />
+      <HiringSection />
       <Footer />
     </div>
   );
