@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import zoomThumbnail from '@/assets/zoom-logo-thumbnail.png';
+import zoomThumbnail from '@/assets/jakob-thumbnail.png';
 
 const ZoomRedirect = () => {
   useEffect(() => {
