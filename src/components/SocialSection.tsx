@@ -1,4 +1,4 @@
-import { Linkedin, Youtube, Twitter, ExternalLink, Users, UserCircle } from "lucide-react";
+import { Linkedin, Youtube, Twitter, ExternalLink, Users, UserCircle, Github } from "lucide-react";
 
 // Note: Some icons may need to be replaced with actual brand icons later
 const SocialSection = () => {
@@ -15,6 +15,11 @@ const SocialSection = () => {
     // Jakob will provide
     description: "Video explorations"
   }, {
+    name: "GitHub",
+    icon: Github,
+    url: "https://github.com/JaPossert",
+    description: "Code & experiments"
+  }, {
     name: "IYG",
     icon: Users,
     url: "#",
@@ -23,8 +28,7 @@ const SocialSection = () => {
   }, {
     name: "Personal Intro",
     icon: UserCircle,
-    url: "#",
-    // Jakob will provide
+    url: "https://bit.ly/japossert_intro",
     description: "Introduction"
   }, {
     name: "X / Twitter",
