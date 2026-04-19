@@ -47,8 +47,7 @@ const SocialSection = () => {
     name: "Mastodon",
     icon: ExternalLink,
     // Placeholder, will need actual Mastodon icon
-    url: "#",
-    // Jakob will provide
+    url: "https://mastodon.social/@japossert",
     description: "Federated presence"
   }];
   return <section className="py-20 px-6 max-w-4xl mx-auto">
