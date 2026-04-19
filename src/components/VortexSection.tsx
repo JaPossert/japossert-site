@@ -13,17 +13,17 @@ const VortexSection = () => {
           <p className="text-cosmic text-lg leading-relaxed">Where most of my energy flows right now - a living project that holds my attention, intention, and creative force.</p>
           
           <div className="relative group">
-            <a href="https://idea2.life" target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link">
+            <a href="https://evobiosys.org" target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link">
               <div className="flex items-center justify-center space-x-3 mb-4">
                 <h3 className="font-heading text-2xl md:text-3xl text-primary">
-                  idea2.life
+                  EvoBioSys
                 </h3>
                 <ExternalLink className="w-5 h-5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
               </div>
-              
-              <p className="text-ethereal leading-relaxed">The infrastructure to guide inspiration to reality. Possibility meets form, and vision finds expression.</p>
-              
-              
+
+              <p className="text-ethereal leading-relaxed">An investment studio with animist philosophy — evo (learning), bio (living, embodied), sys (systems we can create together).</p>
+
+
             </a>
           </div>
         </div>
