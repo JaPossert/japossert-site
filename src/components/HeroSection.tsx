@@ -13,10 +13,10 @@ const HeroSection = () => {
           <h1 className="font-heading text-6xl md:text-8xl font-light tracking-wide">
             <span className="aurora-text">Jakob</span>
           </h1>
-          
-          <div className="max-w-md mx-auto space-y-3">
-            <p className="text-cosmic text-lg font-light">Energetic Field Steward</p>
-            <p className="text-ethereal text-sm">guiding meaningful adVentures — resonance for what matters</p>
+
+          <div className="max-w-2xl mx-auto space-y-3">
+            <p className="text-cosmic text-2xl md:text-3xl font-light leading-snug">Let's form the future we all desire</p>
+            <p className="text-ethereal text-sm">Energetic Field Steward — guiding meaningful adVentures, resonance for what matters</p>
           </div>
         </div>
         
