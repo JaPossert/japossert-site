@@ -5,7 +5,7 @@ const Footer = () => {
           <p className="text-ethereal text-sm">
             Built with intention
           </p>
-          <p className="text-muted-foreground text-xs">No cookies, no analytics, no newsletter - just a doorway</p>
+          <p className="text-muted-foreground text-xs">No cookies, no analytics - just a doorway (and, if you like, occasional letters)</p>
         </div>
         
         <div className="flex flex-col items-center mx-auto">
