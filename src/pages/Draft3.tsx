@@ -1,4 +1,4 @@
-import HeroSection from "@/components/HeroSection";
+import HeroV2 from "@/components/HeroV2";
 import NowSection from "@/components/NowSection";
 import VortexSection from "@/components/VortexSection";
 import CreationsSection from "@/components/CreationsSection";
@@ -7,7 +7,7 @@ import SocialSection from "@/components/SocialSection";
 import LegacySection from "@/components/LegacySection";
 import HiringSection from "@/components/HiringSection";
 import NewsletterSection from "@/components/NewsletterSection";
-import Footer from "@/components/Footer";
+import FooterV2 from "@/components/FooterV2";
 import ArrowDivider from "@/components/ArrowDivider";
 import DraftBanner from "@/components/DraftBanner";
 
@@ -15,7 +15,7 @@ const Draft3 = () => {
   return (
     <div className="min-h-screen serif-variant">
       <DraftBanner current="/draft3" note='Draft 3 — current structure + Creations, italic serif type.' />
-      <HeroSection />
+      <HeroV2 name="Jakob" />
       <ArrowDivider />
       <NowSection />
       <ArrowDivider />
@@ -32,7 +32,7 @@ const Draft3 = () => {
       <HiringSection />
       <ArrowDivider />
       <NewsletterSection />
-      <Footer />
+      <FooterV2 />
     </div>
   );
 };
