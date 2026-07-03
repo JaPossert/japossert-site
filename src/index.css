@@ -161,6 +161,18 @@ All colors MUST be HSL.
   .floating {
     animation: float 6s ease-in-out infinite;
   }
+
+  /* Serif-italic type variation (draft2/draft3): Cormorant Garamond italics for all display text */
+  .serif-variant h1,
+  .serif-variant h2,
+  .serif-variant h3,
+  .serif-variant h4,
+  .serif-variant .font-heading {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+  }
 }
 
 @layer utilities {

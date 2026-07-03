@@ -1,46 +1,5 @@
 import { ExternalLink } from "lucide-react";
-
-const creations = [{
-  name: "unfold the news",
-  url: "https://unfold-news.com",
-  description: "News, unfolded — one story, many perspectives; events, threads & blindspot awareness across outlets."
-}, {
-  name: "Unlocking Housing",
-  url: "https://idea2.site/unlocking-housing/",
-  description: "Making Austria's vacant homes visible — an interactive map of dormant potential."
-}, {
-  name: "QuestHub",
-  url: "https://questhub.eco",
-  description: "A garden of small quests — Purpose Pilot, the Affirmation Engine, and more taking root."
-}, {
-  name: "idea2.life",
-  url: "https://idea2.life",
-  description: "Realizing visions — the portal where new ventures germinate."
-}];
-
-const writings = [{
-  name: "Stages of Affluence & Impact",
-  url: "https://evobiosys.org/publications/stages-of-affluence/",
-  description: "Six stages of personal affluence — and what more money changes at each one, and for whom."
-}, {
-  name: "The Metabookshelf",
-  url: "https://evobiosys.org/publications/metabookshelf/",
-  description: "Publishing generator functions instead of fixed lists — the structure that grows the right bookshelf for each context."
-}];
-
-const pitches = [{
-  name: "Kidur",
-  url: "https://evobiosys.org/pitch/kidur/"
-}, {
-  name: "LogSilk",
-  url: "https://evobiosys.org/pitch/logsilk/"
-}, {
-  name: "EvoPaideia",
-  url: "https://evobiosys.org/pitch/evopaideia/"
-}, {
-  name: "SoFin",
-  url: "https://evobiosys.org/pitch/sofin/"
-}];
+import { creations, writings, pitches } from "@/data/works";
 
 const CreationsSection = () => {
   return <section className="py-20 px-6 max-w-4xl mx-auto">
