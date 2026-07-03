@@ -88,9 +88,7 @@ const NewsletterSection = () => {
                   aria-label="Email address"
                   className="bg-background/60"
                 />
-                <Button type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "Sending…" : "Subscribe"}
-                </Button>
+                <Button type="submit">Subscribe</Button>
               </form>
             </div>
           )}
