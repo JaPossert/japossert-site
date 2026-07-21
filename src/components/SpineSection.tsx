@@ -26,7 +26,7 @@ const SpineSection = () => {
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
             One living structure holds the work: a garden that grounds, an
             engine that raises new ventures from its soil, a widening reach
-            toward other gardens — and one bloom opening right now.
+            toward other gardens - and one bloom opening right now.
           </p>
         </div>
 
@@ -244,7 +244,19 @@ const SpineSection = () => {
         <p className="text-ethereal text-sm leading-relaxed max-w-md mx-auto">
           Read from the ground up: EvoBioSys roots the work, idea2.life grows
           new ventures from it, QuestHub opens the circle toward other gardens
-          — and unfold-news.com blooms as the living test case.
+          - and unfold-news.com blooms as the living test case.
+        </p>
+
+        <p className="text-ethereal text-sm leading-relaxed max-w-md mx-auto">
+          Beneath it all: architecture prototypes that are{" "}
+          <a
+            href="https://github.com/evobiosys"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline transition-colors"
+          >
+            local-first, end-to-end-encrypted, federated
+          </a>.
         </p>
       </div>
     </section>

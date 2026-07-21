@@ -11,7 +11,7 @@ const LegacySection = () => {
         
         <div className="space-y-8">
           <p className="text-cosmic text-lg leading-relaxed">
-            For those seeking context or deeper archives—
+            For those seeking context or deeper archives -
             where the past remains accessible but does not define the present.
           </p>
           

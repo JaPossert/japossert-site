@@ -1,4 +1,4 @@
-import { Linkedin, Youtube, Twitter, ExternalLink, Users, UserCircle, Github } from "lucide-react";
+import { Linkedin, Youtube, ExternalLink, Users, UserCircle, Github } from "lucide-react";
 
 // Note: Some icons may need to be replaced with actual brand icons later
 const SocialSection = () => {
@@ -29,19 +29,12 @@ const SocialSection = () => {
     name: "Personal Intro",
     icon: UserCircle,
     url: "https://bit.ly/japossert_intro",
-    description: "Introduction"
-  }, {
-    name: "X / Twitter",
-    icon: Twitter,
-    url: "#",
-    // Jakob will provide
-    description: "Brief thoughts"
+    description: "Video introduction"
   }, {
     name: "Bluesky",
     icon: ExternalLink,
     // Placeholder, will need actual Bluesky icon
-    url: "#",
-    // Jakob will provide
+    url: "https://bsky.app/profile/japossert.bsky.social",
     description: "Open social"
   }, {
     name: "Mastodon",
@@ -58,7 +51,7 @@ const SocialSection = () => {
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
-            Minimal pathways to presence—not promotion
+            Minimal pathways to presence - not promotion
           </p>
         </div>
         

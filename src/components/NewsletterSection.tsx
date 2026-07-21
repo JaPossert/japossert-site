@@ -63,7 +63,7 @@ const NewsletterSection = () => {
         <div className="p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover">
           {status === "success" && (
             <p className="text-cosmic text-sm">
-              Almost there — check your inbox to confirm.
+              Almost there - check your inbox to confirm.
             </p>
           )}
           {status === "already" && (
@@ -72,7 +72,7 @@ const NewsletterSection = () => {
           {status === "error" && (
             <div className="space-y-4">
               <p className="text-cosmic text-sm">
-                Subscription service is briefly unavailable — please try again later.
+                Subscription service is briefly unavailable - please try again later.
               </p>
               <form
                 onSubmit={handleSubmit}

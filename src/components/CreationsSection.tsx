@@ -10,7 +10,7 @@ const CreationsSection = () => {
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
-            What has recently taken form through this work — living pieces you can visit today.
+            What has recently taken form through this work - living pieces you can visit today.
           </p>
         </div>
 
