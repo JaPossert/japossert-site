@@ -15,16 +15,6 @@ export const creations: Work[] = [{
   url: "https://idea2.site/unlocking-housing/",
   field: "Civic Data",
   description: "An interactive map making Austria's vacant homes visible - dormant potential, surfaced."
-}, {
-  name: "QuestHub",
-  url: "https://questhub.eco",
-  field: "Playful Tools",
-  description: "Swiss-hosted platform matching people's aspirations with initiative - built to connect capital with opportunity."
-}, {
-  name: "idea2.life",
-  url: "https://idea2.life",
-  field: "Venture Studio",
-  description: "Realizing visions - the portal where new ventures germinate."
 }];
 
 export const writings: Work[] = [{
