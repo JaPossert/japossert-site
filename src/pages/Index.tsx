@@ -4,7 +4,7 @@ import CreationsSection from "@/components/CreationsSection";
 import MediaSectionV2 from "@/components/MediaSectionV2";
 import SocialSection from "@/components/SocialSection";
 import LegacySection from "@/components/LegacySection";
-import HiringSection from "@/components/HiringSection";
+// HiringSection hidden 2026-08-02 — component kept for easy restore
 import NewsletterSection from "@/components/NewsletterSection";
 import FooterV2 from "@/components/FooterV2";
 import ArrowDivider from "@/components/ArrowDivider";
@@ -24,8 +24,7 @@ const Index = () => {
       <ArrowDivider />
       <LegacySection />
       <ArrowDivider />
-      <HiringSection />
-      <ArrowDivider />
+      {/* <HiringSection /> hidden 2026-08-02 */}
       <NewsletterSection />
       <FooterV2 />
     </div>
