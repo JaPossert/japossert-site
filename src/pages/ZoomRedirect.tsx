@@ -3,7 +3,7 @@ import zoomThumbnail from '@/assets/jakob-thumbnail.png';
 
 const ZoomRedirect = () => {
   useEffect(() => {
-    window.location.href = 'https://bit.ly/japossert_zoom';
+    window.location.href = 'https://us06web.zoom.us/j/5317068045?pwd=bDRXRGl0R2lYdFI3VDdVZDRQclJBdz09';
   }, []);
 
   return (
