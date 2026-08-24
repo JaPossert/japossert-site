@@ -11,11 +11,13 @@ const OffersSection = () => {
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
-            Prototype coding &amp; architecture. <span className="text-primary font-medium">&euro;250 / hour.</span> No audits.
+            Prototype coding &amp; architecture.{" "}
+            <span className="text-primary font-medium">&euro;250 / hour.</span>
           </p>
           <p className="text-ethereal text-sm max-w-xl mx-auto mt-3">
-            I build the first working version and the structure it stands on - fast, then
-            handed off cleanly. Not code review, not compliance sign-off, not a security audit.
+            I build the v1 and design the (privacy-aware) structure it stands on
+            and show you how to maintain it using an AI harness. FYI: Doesn't
+            include a security audit.
           </p>
           <a
             href="https://github.com/JaPossert"
@@ -33,7 +35,7 @@ const OffersSection = () => {
             <span className="aurora-text">Shipped</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {shipped.map(item => (
+            {shipped.map((item) => (
               <div
                 key={item.name}
                 className="p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover"
@@ -60,7 +62,9 @@ const OffersSection = () => {
                     </a>
                   )}
                 </div>
-                <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
+                <p className="text-ethereal text-sm leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
