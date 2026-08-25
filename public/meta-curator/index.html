@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Meta-Curator &middot; Jakob Possert-Bienzle</title>
+<meta name="description" content="Meta-curation: coordinating the initiatives of knowledge-commons organizations such as the Internet Archive, the Tor Project and eQualitie. A role hosted by many, owned by none.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://japossert.com/meta-curator/">
+<link rel="icon" href="/favicon.ico">
+<style>
+  :root {
+    --paper: #ede6d6;
+    --card: #f7f2e6;
+    --ink: #1f2a33;
+    --ink-soft: #4c5a63;
+    --ink-faint: #5f676d;
+    --line: #c6b99c;
+    --accent-desk: #8b3a2f;
+    --accent-web: #2f6b52;
+    --rule-w: 1px;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    /* stage (interactive) palette */
+    --stage: #e6dcc4;
+    --gold: #b8862f;
+    --coral: #c15a3f;
+    --teal: #2b7f74;
+    --violet: #6a5a9c;
+    --unfound: #a89a7c;
+    --beam: 184, 134, 47;
+    --focus: #1c5f8c;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #17212b;
+      --card: #1f2b36;
+      --ink: #e8e0cd;
+      --ink-soft: #a9b3ba;
+      --ink-faint: #8d99a1;
+      --line: #3a4753;
+      --accent-desk: #e08a72;
+      --accent-web: #6fbf9a;
+      --stage: #1a242f;
+      --gold: #d9a441;
+      --coral: #e2765d;
+      --teal: #4fb8a9;
+      --violet: #a692e0;
+      --unfound: #66707a;
+      --beam: 217, 164, 65;
+      --focus: #8fc4e8;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 6vw, 4rem) clamp(1.1rem, 5vw, 1.75rem) 3rem;
+  }
+
+  a { color: var(--accent-web); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 1.1rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6.4vw, 3.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    max-width: 20ch;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 3.6vw, 1.6rem);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .dek {
+    font-size: clamp(1rem, 2.6vw, 1.2rem);
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0 0 2.2rem;
+  }
+
+  .rule {
+    border: none;
+    border-top: var(--rule-w) solid var(--line);
+    margin: 2.2rem 0;
+  }
+
+  .lede {
+    font-size: 1.06rem;
+    max-width: 58ch;
+  }
+
+  .lede::first-letter {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 3.4em;
+    line-height: 0.82;
+    float: left;
+    margin: 0.03em 0.09em 0 0;
+    color: var(--accent-desk);
+  }
+
+  p { margin: 0 0 1.1rem; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1.3rem;
+  }
+
+  .diagram-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: 0 0 1.6rem;
+  }
+
+  .card {
+    flex: 1 1 15rem;
+    min-width: 0;
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.4rem 1.3rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.15rem;
+  }
+
+  .card .tag {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin: 0 0 0.9rem;
+  }
+
+  .card svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 15.5rem;
+    margin: 0 auto;
+  }
+
+  .desk-diagram { color: var(--accent-desk); }
+  .commons-diagram { color: var(--accent-web); }
+
+  .card p.caption {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0 0;
+  }
+
+  .stamp {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
+    font-weight: 700;
+    padding: 0.32em 0.55em;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    transform: rotate(-8deg);
+    opacity: 0.85;
+  }
+
+  .card.desk .stamp { color: var(--accent-desk); }
+  .card.commons .stamp { color: var(--accent-web); }
+
+  /* practice list */
+  ul.practice {
+    list-style: none;
+    margin: 0 0 1.1rem;
+    padding: 0;
+  }
+  ul.practice li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.75rem;
+    max-width: 58ch;
+  }
+  ul.practice li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.52em;
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background: var(--accent-web);
+    opacity: 0.75;
+  }
+  ul.practice li strong {
+    font-family: var(--serif);
+  }
+
+  /* threads grid */
+  .threads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin: 0 0 1.4rem;
+  }
+  .thread-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1.1rem 1.15rem 1.15rem;
+  }
+  .thread-card h3 {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  .thread-card p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .thread-card .who {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 0.65rem;
+  }
+
+  .closer {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 4.4vw, 1.9rem);
+    line-height: 1.28;
+    max-width: 26ch;
+    margin: 2.4rem 0 0;
+  }
+
+  .cta {
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--paper);
+    background: var(--accent-web);
+    border-radius: 999px;
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    margin: 0.4rem 0.6rem 0.4rem 0;
+  }
+  .cta.ghost {
+    color: var(--accent-web);
+    background: transparent;
+    border: 1px solid var(--accent-web);
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.1rem;
+    border-top: var(--rule-w) solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-faint); }
+
+  @media (max-width: 30rem) {
+    .diagram-row { flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+      animation: fade-up 0.7s ease-out both;
+    }
+    .fade-in.fade-in-delayed { animation-delay: 0.08s; }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-web);
+    outline-offset: 2px;
+  }
+
+  /* ---- interactive stage (the lighthouse and the gardeners) ---- */
+  .stage-frame {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    background: var(--stage);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  svg#stage {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .item-btn { cursor: pointer; }
+  .item-btn:focus-visible { outline: none; }
+  .item-btn:focus-visible circle.hit-ring {
+    stroke: var(--focus);
+    stroke-width: 3;
+    opacity: 1;
+  }
+  .item-core { transition: fill 0.5s ease, r 0.5s ease; }
+  .item-node { transition: transform 1.1s cubic-bezier(.2,.8,.2,1); }
+  .item-node.drift circle.item-core { animation: bob 5.5s ease-in-out infinite; }
+  .item-node:nth-child(3n).drift circle.item-core { animation-delay: -1.3s; }
+  .item-node:nth-child(3n+1).drift circle.item-core { animation-delay: -2.9s; }
+  @keyframes bob {
+    0%, 100% { transform: translate(0px, 0px); }
+    50% { transform: translate(0px, -6px); }
+  }
+  .item-node.tended circle.item-core { animation: breathe 4.2s ease-in-out infinite; }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.82; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.12); }
+  }
+  .pulse-hint { animation: hint 1.4s ease-in-out infinite; }
+  @keyframes hint {
+    0%, 100% { r: 9; opacity: 0.55; }
+    50% { r: 16; opacity: 0; }
+  }
+  .stage-thread {
+    fill: none;
+    stroke-width: 1.6;
+    opacity: 0;
+    transition: opacity 1.5s ease 0.5s;
+  }
+  .stage-thread.on { opacity: 0.65; }
+  .beam-wedge {
+    transform-origin: 400px 66px;
+    animation: sweep 13s linear infinite;
+    opacity: 0.5;
+  }
+  @keyframes sweep {
+    from { transform: rotate(-46deg); }
+    50% { transform: rotate(46deg); }
+    to { transform: rotate(-46deg); }
+  }
+  .curator-label {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+  .curator-count {
+    font-family: var(--sans);
+    font-size: 10.5px;
+  }
+  .status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 0.85rem;
+    font-family: var(--sans);
+  }
+  .progress { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+  .progress strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .hint-text {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    min-height: 1.2em;
+    margin: 0;
+  }
+  .reset-btn {
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+  }
+  .reset-btn:hover, .reset-btn:focus-visible {
+    color: var(--ink);
+    border-color: var(--ink-soft);
+  }
+  .reset-btn[hidden] { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .beam-wedge { animation: none; transform: rotate(0deg); }
+    .item-node.drift circle.item-core { animation: none; }
+    .item-node.tended circle.item-core { animation: none; }
+    .pulse-hint { animation: none; opacity: 0.55; }
+    .item-node { transition-duration: 0.25s; }
+    .stage-thread { transition-duration: 0.25s; }
+  }
+  @media (max-width: 420px) {
+    .status-row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Jakob Possert-Bienzle &middot; Meta-Curator</p>
+
+  <h1 class="fade-in">One desk cannot tend a library this size.</h1>
+  <p class="dek fade-in fade-in-delayed">Knowledge commons like the Internet Archive hold more projects than any single office can garden alone. Meta-curation is how the tending gets shared. This page describes the role, and how I practice it.</p>
+
+  <hr class="rule">
+
+  <p class="lede">For years, one desk decided what got described, checked, and surfaced across a commons' many unmanaged projects. That desk did careful work, but the collection kept growing past what any one office could reach. Requests queued. Whole corners went untended, not from neglect, but from scale.</p>
+  <p>Meta-curation is a change of shape, not a change of ambition: the same care, held by many hands instead of one. A meta-curator tends the gardeners, so the gardeners can tend the commons.</p>
+
+  <hr class="rule">
+
+  <p class="section-label">Two ways to tend the stacks</p>
+
+  <div class="diagram-row">
+    <div class="card desk">
+      <span class="stamp">Superseded</span>
+      <p class="tag">Model 1</p>
+      <h3>The desk</h3>
+      <svg class="desk-diagram" viewBox="0 0 220 180" role="img" aria-label="Diagram: a single central desk connected by spokes to six documents, every decision routing through the center.">
+        <g stroke="currentColor" stroke-width="1.6" fill="none" opacity="0.75">
+          <line x1="110" y1="90" x2="175" y2="90"/>
+          <line x1="110" y1="90" x2="142.5" y2="146.3"/>
+          <line x1="110" y1="90" x2="77.5" y2="146.3"/>
+          <line x1="110" y1="90" x2="45" y2="90"/>
+          <line x1="110" y1="90" x2="77.5" y2="33.7"/>
+          <line x1="110" y1="90" x2="142.5" y2="33.7"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="163" y="82" width="24" height="16" rx="1.5"/>
+          <rect x="130.5" y="138.3" width="24" height="16" rx="1.5"/>
+          <rect x="65.5" y="138.3" width="24" height="16" rx="1.5"/>
+          <rect x="33" y="82" width="24" height="16" rx="1.5"/>
+          <rect x="65.5" y="25.7" width="24" height="16" rx="1.5"/>
+          <rect x="130.5" y="25.7" width="24" height="16" rx="1.5"/>
+        </g>
+        <rect x="92" y="74" width="36" height="32" rx="2" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="1.8"/>
+      </svg>
+      <p class="caption">One hub. Every proposal, tag and fix waits in the same queue.</p>
+    </div>
+
+    <div class="card commons">
+      <span class="stamp">Active</span>
+      <p class="tag">Model 2</p>
+      <h3>The commons</h3>
+      <svg class="commons-diagram" viewBox="0 0 220 180" role="img" aria-label="Diagram: eight community curators arranged in a web, each connected to several neighbors, with no single center.">
+        <g stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.7">
+          <line x1="175" y1="90" x2="156" y2="136"/>
+          <line x1="156" y1="136" x2="110" y2="155"/>
+          <line x1="110" y1="155" x2="64" y2="136"/>
+          <line x1="64" y1="136" x2="45" y2="90"/>
+          <line x1="45" y1="90" x2="64" y2="44"/>
+          <line x1="64" y1="44" x2="110" y2="25"/>
+          <line x1="110" y1="25" x2="156" y2="44"/>
+          <line x1="156" y1="44" x2="175" y2="90"/>
+          <line x1="175" y1="90" x2="64" y2="136" opacity="0.4"/>
+          <line x1="156" y1="136" x2="45" y2="90" opacity="0.4"/>
+          <line x1="110" y1="155" x2="110" y2="25" opacity="0.4"/>
+          <line x1="64" y1="44" x2="156" y2="44" opacity="0.4"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="175" cy="90" r="6"/>
+          <circle cx="156" cy="136" r="6"/>
+          <circle cx="110" cy="155" r="6"/>
+          <circle cx="64" cy="136" r="6"/>
+          <circle cx="45" cy="90" r="6"/>
+          <circle cx="64" cy="44" r="6"/>
+          <circle cx="110" cy="25" r="6"/>
+          <circle cx="156" cy="44" r="6"/>
+        </g>
+      </svg>
+      <p class="caption">Many gardeners, each closest to one corner, linked by shared standards.</p>
+    </div>
+  </div>
+
+  <p>In the commons, local experts propose, describe and vouch for the projects they already know. Shared conventions, not a shared queue, keep everyone legible to everyone else. The lighthouse still coordinates, but it stops being the only hand on every file.</p>
+
+  <hr class="rule">
+
+  <p class="section-label">What a meta-curator does</p>
+
+  <ul class="practice">
+    <li><strong>Convenes the people doing the work,</strong> so managers do not have to convene at all. The builders meet; the decisions travel with them.</li>
+    <li><strong>Resumes stalled conversations</strong> between projects that need each other but drifted apart, and stays with them until a concrete roadmap names which person from which project comes together.</li>
+    <li><strong>Maps overlaps:</strong> where two organizations' aspirations already point at the same missing piece, and neither has noticed yet.</li>
+    <li><strong>Keeps everyone legible:</strong> shared conventions, public briefs, monthly written updates and milestone-based check-ins instead of standing meetings.</li>
+    <li><strong>Weaves resources:</strong> connects the projects being coordinated with funders who match them, so the coordination also feeds the work it reveals.</li>
+  </ul>
+
+  <hr class="rule">
+
+  <p class="section-label">Try it: the lighthouse and the gardeners</p>
+
+  <p>A lighthouse only reveals; it never moves an item itself. The commons below drifts, unmanaged. Click a drifting item and watch a curator, one of several, adopt it into a living collection.</p>
+
+  <div class="stage-frame">
+    <svg id="stage" viewBox="0 0 800 520" role="img" aria-labelledby="stage-title stage-desc">
+      <title id="stage-title">The uncurated commons</title>
+      <desc id="stage-desc">Twelve drifting items and four curators. Click a drifting item to send it to a curator, who grows it into a collection.</desc>
+      <g id="threads"></g>
+      <g id="curators"></g>
+      <g id="lighthouse" aria-hidden="true">
+        <g class="beam-wedge">
+          <path d="M 400 66 L 300 -40 L 500 -40 Z" fill="rgb(var(--beam))" opacity="0.16" />
+        </g>
+        <path d="M 388 110 L 396 62 L 404 62 L 412 110 Z" fill="var(--ink-soft)" opacity="0.55" />
+        <rect x="391" y="50" width="18" height="14" rx="2" fill="var(--gold)" />
+        <circle cx="400" cy="57" r="4.5" fill="var(--paper)" />
+      </g>
+      <g id="items"></g>
+    </svg>
+  </div>
+
+  <div class="status-row">
+    <p class="progress" id="progress"><strong id="progress-n">0</strong> of 12 tended</p>
+    <p class="hint-text" id="hint" aria-live="polite">click a drifting item to send light its way</p>
+    <button class="reset-btn" id="reset" hidden type="button">let the commons drift again</button>
+  </div>
+
+  <hr class="rule">
+
+  <p class="section-label">Threads in motion</p>
+
+  <div class="threads-grid">
+    <div class="thread-card">
+      <h3>Privacy full-stack</h3>
+      <p>Coordinating initiatives across archiving and privacy infrastructure, such as OnionPress and embedding Arti, the Rust Tor client, in the browser.</p>
+      <span class="who">Internet Archive &middot; Tor Project &middot; eQualitie &middot; Ethereum Foundation</span>
+    </div>
+    <div class="thread-card">
+      <h3>Distributed curation</h3>
+      <p>Community curators for a commons' unmanaged collections: local experts adopt the corners they know, held together by shared conventions.</p>
+      <span class="who">Internet Archive &middot; DWeb communities</span>
+    </div>
+    <div class="thread-card">
+      <h3>Semantic infrastructure</h3>
+      <p>Profiles of who curates what, and semantic overlap discovery, so similar actors find each other before they duplicate each other.</p>
+      <span class="who">QuestHub &middot; open, transparent, by everyone</span>
+    </div>
+    <div class="thread-card">
+      <h3>Grounded commons</h3>
+      <p>The same craft applied beyond archives: dormant housing made visible, news unfolded across perspectives, open source carried toward everyday adoption.</p>
+      <span class="who">Unlocking Housing &middot; Unfold News &middot; open-source adoption</span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <p class="section-label">Hosted by many, owned by none</p>
+
+  <p>A meta-curator earns trust from many stakeholders by belonging exclusively to none of them. The role grew in conversation with the Internet Archive, and it works for the Archive. It does not depend on it.</p>
+  <p>Any organization that benefits from tended commons can host or fund a share of the role: archives, privacy projects, foundations, public programs, municipalities. A stable base retained by several hands keeps the curator independent, and independence is what makes the coordination trustworthy to every side of the table.</p>
+
+  <p>
+    <a class="cta" href="https://www.linkedin.com/in/japossert" rel="me">Reach out on LinkedIn</a>
+    <a class="cta ghost" href="https://japossert.com/">More about my work</a>
+  </p>
+
+  <p class="closer">Universal access needs many gardeners. Someone has to tend the gardeners, too.</p>
+
+  <footer>Meta-Curator &middot; Jakob Possert-Bienzle &middot; 2026 &middot; <a href="https://japossert.com/">japossert.com</a> &middot; short link: japossert.com/mc</footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var svgns = "http://www.w3.org/2000/svg";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var curators = [
+    { id: "texts",    label: "Texts",           color: "var(--gold)",   x: 96,  y: 92,  sign: [1, 1] },
+    { id: "film",     label: "Film & Video",    color: "var(--coral)",  x: 704, y: 92,  sign: [-1, 1] },
+    { id: "audio",    label: "Audio",           color: "var(--teal)",   x: 96,  y: 432, sign: [1, -1] },
+    { id: "software", label: "Software & Web",  color: "var(--violet)", x: 704, y: 432, sign: [-1, -1] }
+  ];
+
+  var slotOffsets = [
+    [22, 16], [46, 34], [16, 46]
+  ];
+
+  var itemPositions = [
+    [230, 172], [330, 168], [430, 168], [530, 172],
+    [270, 260], [370, 256], [470, 256], [570, 260],
+    [230, 350], [330, 354], [430, 354], [530, 350]
+  ];
+
+  var items = itemPositions.map(function (pos, i) {
+    var curator = curators[(i * 3) % 4];
+    return { x: pos[0], y: pos[1], curator: curator, tended: false, index: i };
+  });
+
+  var svg = document.getElementById("stage");
+  var curatorsLayer = document.getElementById("curators");
+  var threadsLayer = document.getElementById("threads");
+  var itemsLayer = document.getElementById("items");
+  var progressN = document.getElementById("progress-n");
+  var hintEl = document.getElementById("hint");
+  var resetBtn = document.getElementById("reset");
+
+  var tendedCount = 0;
+  var everClicked = false;
+  var idleHintTimer = null;
+  var idleAutoTimer = null;
+
+  function el(tag, attrs) {
+    var node = document.createElementNS(svgns, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    return node;
+  }
+
+  curators.forEach(function (c) {
+    var g = el("g", { transform: "translate(" + c.x + "," + c.y + ")" });
+    g.appendChild(el("circle", { r: 15, fill: "none", stroke: c.color, "stroke-width": 1.6, opacity: 0.55 }));
+    g.appendChild(el("circle", { r: 6, fill: c.color, opacity: 0.85 }));
+    var label = el("text", {
+      class: "curator-label",
+      x: 0,
+      y: c.sign[1] > 0 ? 34 : -22,
+      "text-anchor": "middle",
+      fill: c.color
+    });
+    label.textContent = c.label;
+    g.appendChild(label);
+    var count = el("text", {
+      class: "curator-count",
+      x: 0,
+      y: c.sign[1] > 0 ? 48 : -8,
+      "text-anchor": "middle",
+      fill: "var(--ink-soft)"
+    });
+    count.textContent = "0 tended";
+    count.setAttribute("data-count-for", c.id);
+    g.appendChild(count);
+    curatorsLayer.appendChild(g);
+    c.countEl = count;
+  });
+
+  items.forEach(function (item, i) {
+    var g = el("g", { class: "item-node drift", transform: "translate(" + item.x + "," + item.y + ")" });
+
+    var btn = el("g", {
+      class: "item-btn",
+      tabindex: "0",
+      role: "button",
+      "aria-label": "Drifting item " + (i + 1) + ", not yet tended. Activate to send it to a curator."
+    });
+    btn.appendChild(el("circle", { class: "hit-ring", r: 21, fill: "transparent", stroke: "transparent", "stroke-width": 3 }));
+    btn.appendChild(el("circle", { class: "item-core", r: 8, fill: "var(--unfound)" }));
+    g.appendChild(btn);
+    itemsLayer.appendChild(g);
+
+    item.group = g;
+    item.btn = btn;
+    item.core = btn.querySelector(".item-core");
+
+    function activate() { tend(item); }
+    btn.addEventListener("click", activate);
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activate();
+      }
+    });
+  });
+
+  function slotFor(curator, slotIndex) {
+    var o = slotOffsets[slotIndex % slotOffsets.length];
+    return [curator.x + o[0] * curator.sign[0], curator.y + o[1] * curator.sign[1]];
+  }
+
+  function tend(item) {
+    if (item.tended) return;
+    item.tended = true;
+    everClicked = true;
+    clearTimeout(idleHintTimer);
+    clearTimeout(idleAutoTimer);
+    hintEl.textContent = "";
+
+    var curator = item.curator;
+    curator.tendedCount = (curator.tendedCount || 0) + 1;
+    curator.countEl.textContent = curator.tendedCount + " tended";
+
+    var slot = slotFor(curator, curator.tendedCount - 1);
+
+    var thread = el("path", {
+      class: "stage-thread",
+      d: "M " + item.x + " " + item.y + " Q " + ((item.x + curator.x) / 2) + " " + ((item.y + curator.y) / 2 - 30) + " " + curator.x + " " + curator.y,
+      stroke: curator.color
+    });
+    threadsLayer.appendChild(thread);
+    requestAnimationFrame(function () {
+      thread.classList.add("on");
+      setTimeout(function () { thread.style.opacity = "0"; }, 2200);
+    });
+
+    item.group.classList.remove("drift");
+    item.group.classList.add("tended");
+    item.group.setAttribute("transform", "translate(" + slot[0] + "," + slot[1] + ")");
+    item.core.style.fill = curator.color;
+    item.core.setAttribute("r", "6");
+    item.btn.setAttribute("aria-label", "Item tended by " + curator.label + " curator.");
+    item.btn.setAttribute("tabindex", "-1");
+
+    tendedCount += 1;
+    progressN.textContent = String(tendedCount);
+
+    if (tendedCount === items.length) {
+      onComplete();
+    }
+  }
+
+  function onComplete() {
+    hintEl.textContent = "all twelve tended, four curators, one living commons";
+    resetBtn.hidden = false;
+    var bloom = el("circle", { cx: 400, cy: 260, r: 4, fill: "var(--gold)", opacity: "0.28" });
+    svg.insertBefore(bloom, curatorsLayer);
+    if (!reduceMotion) {
+      bloom.animate(
+        [
+          { r: 4, opacity: 0.28 },
+          { r: 340, opacity: 0 }
+        ],
+        { duration: 1200, easing: "ease-out" }
+      );
+    }
+    setTimeout(function () { bloom.remove(); }, 1300);
+  }
+
+  function reset() {
+    items.forEach(function (item) {
+      item.tended = false;
+      item.group.classList.add("drift");
+      item.group.classList.remove("tended");
+      item.group.setAttribute("transform", "translate(" + item.x + "," + item.y + ")");
+      item.core.style.fill = "var(--unfound)";
+      item.core.setAttribute("r", "8");
+      item.btn.setAttribute("aria-label", "Drifting item, not yet tended. Activate to send it to a curator.");
+      item.btn.setAttribute("tabindex", "0");
+    });
+    curators.forEach(function (c) {
+      c.tendedCount = 0;
+      c.countEl.textContent = "0 tended";
+    });
+    threadsLayer.textContent = "";
+    tendedCount = 0;
+    progressN.textContent = "0";
+    resetBtn.hidden = true;
+    everClicked = false;
+    hintEl.textContent = "click a drifting item to send light its way";
+    armIdleTimers();
+  }
+
+  resetBtn.addEventListener("click", reset);
+
+  function firstUntended() {
+    return items.find(function (item) { return !item.tended; });
+  }
+
+  function armIdleTimers() {
+    clearTimeout(idleHintTimer);
+    clearTimeout(idleAutoTimer);
+    if (!everClicked) {
+      idleHintTimer = setTimeout(function () {
+        if (everClicked) return;
+        var target = firstUntended();
+        if (!target) return;
+        target.core.classList.add("pulse-hint");
+        hintEl.textContent = "try clicking a drifting item";
+      }, 3000);
+      idleAutoTimer = setTimeout(function () {
+        if (everClicked) return;
+        var target = firstUntended();
+        if (target) tend(target);
+      }, 6500);
+    }
+  }
+
+  armIdleTimers();
+})();
+</script>
+</body>
+</html>
