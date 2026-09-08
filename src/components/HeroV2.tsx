@@ -25,7 +25,7 @@ const HeroV2 = ({ name = "Jakob Possert-Bienzle" }: { name?: string }) => {
             consuming it. Drawn to cohering aligned but not yet coordinated projects: Doing what
             is important but neglected by others.
           </p>
-          <p className="text-ethereal text-sm font-body not-italic">Lives with his wife and first child in Vienna.</p>
+          <p className="text-ethereal text-sm font-body not-italic">Lives with his wife in Vienna.</p>
           <p className="text-sm font-body not-italic">
             <a href="/cv" className="text-primary hover:text-primary/80 underline transition-colors">CV</a>
           </p>
