@@ -1,5 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
-import { shipped } from "@/data/works";
+import { Github } from "lucide-react";
 
 const OffersSection = () => {
   return (
@@ -28,46 +27,6 @@ const OffersSection = () => {
             <Github className="w-4 h-4" />
             github.com/JaPossert
           </a>
-        </div>
-
-        <div className="text-left">
-          <h3 className="font-heading text-2xl md:text-3xl font-light text-center mb-8">
-            <span className="aurora-text">Shipped</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {shipped.map((item) => (
-              <div
-                key={item.name}
-                className="p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-2 text-primary"
-                  >
-                    <h4 className="font-heading text-lg">{item.name}</h4>
-                    <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                  {item.githubUrl && (
-                    <a
-                      href={item.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${item.name} on GitHub`}
-                      className="text-ethereal hover:text-primary transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-                <p className="text-ethereal text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
