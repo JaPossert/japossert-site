@@ -4,11 +4,13 @@ import { ExternalLink } from "lucide-react";
  * SpineSection — one coherent illustration of how the ventures hold together.
  *
  * Spatial semantics (bottom → top, center → periphery):
- *   EvoBioSys        = the garden at the base, grounding everything
- *   idea2.life       = the generative engine, a stem rising out of the garden
- *   QuestHub         = a fan/cone widening outward toward other people's
- *                      gardens (dim, unlabeled shapes at the periphery)
- *   unfold-news.com  = the current bloom at the tip — glowing, pulsing focus
+ *   TrustWeb   = the garden at the base, grounding everything, growing
+ *                right now
+ *   QuestHub   = the point on the stem from which the reach fans out
+ *                toward other people's gardens (dim, unlabeled shapes at
+ *                the periphery) — where the spreading happens
+ *   EvoBioSys  = the quiet root at the tip, no bloom, no glow — the
+ *                organization everything traces back to
  *
  * Pure inline SVG (viewBox-based) with HTML labels absolutely positioned in
  * percentages of the same coordinate space, so everything scales together
@@ -24,9 +26,9 @@ const SpineSection = () => {
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
-            One living structure holds the work: a garden that grounds, an
-            engine that raises new ventures from its soil, a widening reach
-            toward other gardens - and one bloom opening right now.
+            One living structure holds the work: EvoBioSys roots it, QuestHub
+            is where it fans out toward other gardens, and TrustWeb grows
+            from that same soil right now.
           </p>
         </div>
 
@@ -40,9 +42,9 @@ const SpineSection = () => {
             aria-labelledby="spine-title"
           >
             <title id="spine-title">
-              Diagram: the EvoBioSys garden at the base, the idea2.life engine
-              rising from it, the QuestHub fan reaching outward toward other
-              gardens, and unfold-news.com blooming at the tip.
+              Diagram: EvoBioSys as the quiet root at the tip, QuestHub as the
+              point on the stem where the reach fans out toward other
+              gardens, and TrustWeb growing from the garden at the base.
             </title>
 
             <defs>
@@ -50,18 +52,13 @@ const SpineSection = () => {
                 <stop offset="0%" stopColor="hsl(var(--primary))" />
                 <stop offset="100%" stopColor="hsl(var(--secondary))" />
               </linearGradient>
-              <radialGradient id="spine-bloom-glow">
-                <stop offset="0%" stopColor="hsl(var(--secondary) / 0.5)" />
-                <stop offset="55%" stopColor="hsl(var(--secondary) / 0.14)" />
-                <stop offset="100%" stopColor="hsl(var(--secondary) / 0)" />
-              </radialGradient>
               <radialGradient id="spine-garden-glow">
                 <stop offset="0%" stopColor="hsl(var(--primary) / 0.18)" />
                 <stop offset="100%" stopColor="hsl(var(--primary) / 0)" />
               </radialGradient>
             </defs>
 
-            {/* ---- QuestHub cone: widening from the engine out to the sides ---- */}
+            {/* ---- QuestHub cone: widening from the spreading point out to the sides ---- */}
             <path
               d="M 200 330 L 28 178 Q 200 118 372 178 Z"
               fill="hsl(var(--primary) / 0.04)"
@@ -100,7 +97,7 @@ const SpineSection = () => {
               <ellipse cx="380" cy="212" rx="15" ry="6" fill="hsl(var(--primary) / 0.07)" />
             </g>
 
-            {/* ---- EvoBioSys garden: the grounded mound at the base ---- */}
+            {/* ---- TrustWeb garden: the grounded mound at the base ---- */}
             <ellipse cx="200" cy="438" rx="150" ry="42" fill="url(#spine-garden-glow)" />
             <line
               x1="30" y1="450" x2="370" y2="450"
@@ -127,81 +124,68 @@ const SpineSection = () => {
               <circle cx="288" cy="442" r="1.5" />
             </g>
 
-            {/* ---- idea2.life engine: the stem rising out of the garden ---- */}
+            {/* ---- stem: rises from the TrustWeb garden, through QuestHub, up to EvoBioSys ---- */}
             <path
-              d="M 200 416 C 196 366 204 306 200 254 C 198 228 200 208 200 194"
+              d="M 200 416 C 196 380 200 356 200 336"
               stroke="url(#spine-stem)"
               strokeWidth="3"
               strokeLinecap="round"
               fill="none"
             />
-            {/* engine rings — the mechanism that generates new ventures */}
-            <circle cx="200" cy="342" r="8" fill="hsl(var(--background))" stroke="hsl(var(--primary) / 0.7)" strokeWidth="1.5" />
-            <circle cx="200" cy="342" r="3" fill="hsl(var(--primary))" />
-            <circle cx="200" cy="290" r="6" fill="hsl(var(--background))" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1.5" />
-            <circle cx="200" cy="290" r="2" fill="hsl(var(--secondary))" />
+            <path
+              d="M 200 324 C 198 270 202 200 200 160"
+              stroke="url(#spine-stem)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              fill="none"
+            />
             {/* small side leaves on the stem */}
             <g stroke="hsl(var(--primary) / 0.5)" strokeWidth="1.5" strokeLinecap="round" fill="none">
-              <path d="M 199 380 q -14 -4 -20 -14" />
-              <path d="M 201 318 q 14 -4 19 -13" />
+              <path d="M 199 394 q -14 -4 -20 -14" />
+              <path d="M 201 260 q 14 -4 19 -13" />
             </g>
 
-            {/* ---- unfold-news.com: the current bloom — glowing and pulsing ---- */}
-            <circle cx="200" cy="185" r="34" fill="url(#spine-bloom-glow)">
-              <animate attributeName="r" values="30;42;30" dur="4s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite" />
-            </circle>
-            <circle
-              cx="200" cy="185" r="17"
-              fill="none"
-              stroke="hsl(var(--secondary) / 0.35)"
-              strokeWidth="1"
-              strokeDasharray="2 4"
-            >
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
-            </circle>
-            {[0, 60, 120, 180, 240, 300].map((angle) => (
-              <g key={angle} transform={`rotate(${angle} 200 185)`}>
-                <ellipse cx="200" cy="173" rx="4.5" ry="10" fill="hsl(var(--secondary) / 0.75)" />
-              </g>
-            ))}
-            <circle cx="200" cy="185" r="5" fill="hsl(var(--secondary))" />
-            <circle cx="198" cy="183" r="1.5" fill="hsl(var(--background) / 0.6)" />
+            {/* ---- QuestHub: the point on the stem from which the reach fans out ---- */}
+            <circle cx="200" cy="330" r="9" fill="hsl(var(--background))" stroke="hsl(var(--primary) / 0.75)" strokeWidth="1.5" />
+            <circle cx="200" cy="330" r="3.5" fill="hsl(var(--primary))" />
+
+            {/* ---- EvoBioSys: the quiet root at the tip, no bloom ---- */}
+            <circle cx="200" cy="150" r="4" fill="hsl(var(--muted-foreground) / 0.7)" />
           </svg>
 
           {/* ---- Labels: real links, positioned in the same coordinate space ---- */}
 
-          {/* unfold-news.com — the current bloom, most prominent */}
+          {/* EvoBioSys — the quiet root at the tip, no bloom */}
           <a
-            href="https://unfold-news.com"
+            href="https://evobiosys.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="group absolute flex flex-col items-center presence-link"
-            style={{ left: "50%", top: "19%", transform: "translate(-50%, -100%)" }}
+            className="group absolute flex items-center space-x-1.5 presence-link"
+            style={{ left: "50%", top: "26%", transform: "translate(-50%, -100%)" }}
           >
-            <span className="flex items-center space-x-1.5">
-              <span className="font-heading text-base sm:text-lg aurora-text whitespace-nowrap">
-                unfold-news.com
-              </span>
-              <ExternalLink className="w-4 h-4 text-secondary opacity-60 group-hover:opacity-100 transition-opacity" />
+            <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
+              EvoBioSys
             </span>
-            <span className="text-ethereal text-[10px] sm:text-xs tracking-wide">
-              current bloom
-            </span>
+            <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
           </a>
 
-          {/* QuestHub — the fan reaching outward */}
+          {/* QuestHub — where the spreading happens */}
           <a
             href="https://questhub.eco"
             target="_blank"
             rel="noopener noreferrer"
-            className="group absolute flex items-center space-x-1.5 presence-link"
-            style={{ left: "26%", top: "46%", transform: "translate(-50%, -50%)" }}
+            className="group absolute flex flex-col items-center presence-link"
+            style={{ left: "50%", top: "66%", transform: "translate(-50%, -50%)" }}
           >
-            <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
-              QuestHub
+            <span className="flex items-center space-x-1.5">
+              <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
+                QuestHub
+              </span>
+              <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
             </span>
-            <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+            <span className="text-ethereal text-[10px] sm:text-xs tracking-wide">
+              where the spreading happens
+            </span>
           </a>
 
           {/* whisper of the neighbors at the periphery */}
@@ -212,39 +196,25 @@ const SpineSection = () => {
             other gardens
           </span>
 
-          {/* idea2.life — the engine on the stem */}
+          {/* TrustWeb — the garden at the base, growing right now */}
           <a
-            href="https://idea2.life"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group absolute flex items-center space-x-1.5 presence-link"
-            style={{ left: "56%", top: "68.5%", transform: "translate(0, -50%)" }}
-          >
-            <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
-              idea2.life
-            </span>
-            <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-          </a>
-
-          {/* EvoBioSys — the garden at the base */}
-          <a
-            href="https://evobiosys.org"
+            href="https://idea2.site/trustweb/"
             target="_blank"
             rel="noopener noreferrer"
             className="group absolute flex items-center space-x-1.5 presence-link"
             style={{ left: "50%", top: "94.5%", transform: "translate(-50%, -50%)" }}
           >
-            <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
-              EvoBioSys
+            <span className="font-heading text-lg sm:text-xl aurora-text whitespace-nowrap">
+              TrustWeb
             </span>
-            <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink className="w-4 h-4 text-secondary opacity-60 group-hover:opacity-100 transition-opacity" />
           </a>
         </div>
 
         <p className="text-ethereal text-sm leading-relaxed max-w-md mx-auto">
-          Read from the ground up: EvoBioSys roots the work, idea2.life grows
-          new ventures from it, QuestHub opens the circle toward other gardens
-          - and unfold-news.com blooms as the living test case.
+          Read from the top down: EvoBioSys is the quiet root, QuestHub is
+          where it opens the circle toward other gardens - and TrustWeb grows
+          from that same soil as the living test case, right now.
         </p>
 
         <p className="text-ethereal text-sm leading-relaxed max-w-md mx-auto">
