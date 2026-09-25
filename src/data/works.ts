@@ -6,8 +6,8 @@ export type Work = {
 };
 
 export const creations: Work[] = [{
-  name: "Unfold News",
-  url: "https://unfold-news.com",
+  name: "Transparent.News",
+  url: "https://transparent.news",
   field: "Media",
   description: "Open-source news bias aggregator."
 }, {

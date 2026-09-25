@@ -169,23 +169,18 @@ const SpineSection = () => {
             <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
           </a>
 
-          {/* QuestHub — where the spreading happens */}
+          {/* QuestHub — the point the reach fans out from */}
           <a
             href="https://questhub.eco"
             target="_blank"
             rel="noopener noreferrer"
-            className="group absolute flex flex-col items-center presence-link"
-            style={{ left: "50%", top: "66%", transform: "translate(-50%, -50%)" }}
+            className="group absolute flex items-center space-x-1.5 presence-link"
+            style={{ left: "50%", top: "70%", transform: "translate(-50%, 0)" }}
           >
-            <span className="flex items-center space-x-1.5">
-              <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
-                QuestHub
-              </span>
-              <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+            <span className="font-heading text-sm sm:text-base text-primary whitespace-nowrap">
+              QuestHub
             </span>
-            <span className="text-ethereal text-[10px] sm:text-xs tracking-wide">
-              where the spreading happens
-            </span>
+            <ExternalLink className="w-3.5 h-3.5 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
           </a>
 
           {/* whisper of the neighbors at the periphery */}
