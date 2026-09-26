@@ -15,7 +15,7 @@ const HeroV2 = ({ name = "Jakob Possert-Bienzle" }: { name?: string }) => {
         </h1>
 
         <div className="max-w-2xl mx-auto space-y-3">
-          <p className="font-heading text-cosmic text-2xl md:text-3xl font-light leading-snug">Consultant, Founder, Manager</p>
+          <p className="font-heading text-cosmic text-2xl md:text-3xl font-light leading-snug">Founder, Consultant</p>
           <p className="text-ethereal text-sm font-body not-italic">Technology &amp; Governance | Organizational Development</p>
           <p className="text-ethereal text-sm font-body not-italic leading-relaxed">
             Initiator, advisor and steward across tech (CTO: architecture design &amp; agentic
