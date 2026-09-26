@@ -64,14 +64,14 @@ export const shipped: Shipped[] = [{
   url: "https://idea2.site/gametheory-lab/",
   description: "Nash equilibrium and iterated-prisoner's-dilemma sandbox extended into a nested-holon power-pole model."
 }, {
+  name: "Ideal Groceries",
+  url: "https://evobiosys.org/food/ideal-groceries/",
+  description: "13-criterion weighted re-ranker over staples and offers with a basket break-even engine. 59 tests."
+}, {
   name: "nanoX",
   url: "https://github.com/JaPossert/nanox",
   githubUrl: "https://github.com/JaPossert/nanox",
   description: "One terminal command, one scratch buffer, routed into a Logseq-style vault. Zsh + Python + Hammerspoon. MIT."
-}, {
-  name: "Ideal Groceries",
-  url: "https://evobiosys.org/food/ideal-groceries/",
-  description: "13-criterion weighted re-ranker over staples and offers with a basket break-even engine. 59 tests."
 }];
 
 export const pitches = [{

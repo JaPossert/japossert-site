@@ -1,7 +1,12 @@
 import { ExternalLink, Github } from "lucide-react";
-import { creations, shipped, writings, pitches, type Work } from "@/data/works";
+import { creations, shipped, writings, pitches, type Work, type Shipped } from "@/data/works";
 
-const MajorCard = ({ item }: { item: Work }) => <a href={item.url} target="_blank" rel="noopener noreferrer" className="group block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link text-center">
+// Two-per-row cards, whichever wraps past a full row centers on its own
+// line instead of hugging the left edge (flex-wrap + justify-center does
+// this per-line automatically, unlike CSS grid's last-row behavior).
+const TWO_UP = "w-full md:w-[calc(50%-0.75rem)]";
+
+const MajorCard = ({ item }: { item: Work }) => <a href={item.url} target="_blank" rel="noopener noreferrer" className={`group block ${TWO_UP} p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link text-center`}>
     <div className="flex items-center justify-center space-x-3 mb-4">
       <h4 className="font-heading text-xl md:text-2xl text-primary">{item.name}</h4>
       <ExternalLink className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
@@ -9,9 +14,20 @@ const MajorCard = ({ item }: { item: Work }) => <a href={item.url} target="_blan
     <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
   </a>;
 
-const CreationsSection = () => {
-  const [majorTop, majorRest] = [creations.slice(0, 2), creations.slice(2)];
+const MinorCard = ({ item }: { item: Shipped }) => <div className={`${TWO_UP} p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover`}>
+    <div className="flex items-center justify-between mb-3">
+      <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-primary">
+        <h4 className="font-heading text-lg">{item.name}</h4>
+        <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
+      </a>
+      {item.githubUrl && <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${item.name} on GitHub`} className="text-ethereal hover:text-primary transition-colors">
+          <Github className="w-4 h-4" />
+        </a>}
+    </div>
+    <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
+  </div>;
 
+const CreationsSection = () => {
   return <section className="py-20 px-6 max-w-4xl mx-auto">
       <div className="text-center space-y-12">
         <div>
@@ -29,12 +45,9 @@ const CreationsSection = () => {
             <span className="aurora-text">Major</span>
           </h3>
           <div className="w-8 h-px bg-primary mx-auto"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {majorTop.map(item => <MajorCard key={item.name} item={item} />)}
+          <div className="flex flex-wrap justify-center gap-6">
+            {creations.map(item => <MajorCard key={item.name} item={item} />)}
           </div>
-          {majorRest.length > 0 && <div className="grid grid-cols-1 gap-6 max-w-sm mx-auto">
-              {majorRest.map(item => <MajorCard key={item.name} item={item} />)}
-            </div>}
         </div>
 
         <div className="space-y-6 text-left">
@@ -42,19 +55,8 @@ const CreationsSection = () => {
             <span className="aurora-text">Minor</span>
           </h3>
           <div className="w-8 h-px bg-primary mx-auto"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {shipped.map(item => <div key={item.name} className="p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover">
-                <div className="flex items-center justify-between mb-3">
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-primary">
-                    <h4 className="font-heading text-lg">{item.name}</h4>
-                    <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                  {item.githubUrl && <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${item.name} on GitHub`} className="text-ethereal hover:text-primary transition-colors">
-                      <Github className="w-4 h-4" />
-                    </a>}
-                </div>
-                <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
-              </div>)}
+          <div className="flex flex-wrap justify-center gap-6">
+            {shipped.map(item => <MinorCard key={item.name} item={item} />)}
           </div>
         </div>
 
@@ -63,8 +65,8 @@ const CreationsSection = () => {
             <span className="aurora-text">Living Writings</span>
           </h3>
           <div className="w-8 h-px bg-primary mx-auto"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {writings.map(item => <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="group block p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link text-center">
+          <div className="flex flex-wrap justify-center gap-6">
+            {writings.map(item => <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className={`group block ${TWO_UP} p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border/30 glow-hover presence-link text-center`}>
                 <div className="flex items-center justify-center space-x-3 mb-4">
                   <h3 className="font-heading text-lg md:text-xl text-primary">{item.name}</h3>
                   <ExternalLink className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
