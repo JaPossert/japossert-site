@@ -6,6 +6,11 @@ export type Work = {
 };
 
 export const creations: Work[] = [{
+  name: "QuestHub",
+  url: "https://questhub.eco",
+  field: "Community Infrastructure",
+  description: "Event-sourced Rust server behind Caddy on a self-run VPS. 96 public quests."
+}, {
   name: "Transparent.News",
   url: "https://transparent.news",
   field: "Media",
@@ -50,11 +55,6 @@ export const shipped: Shipped[] = [{
   name: "Europe of the Regions",
   url: "https://meta-democracy.org/regions/",
   description: "MapLibre GL map of 191 European regions dissolved from Eurostat NUTS by a Python pipeline. 69 tests."
-}, {
-  name: "QuestHub",
-  url: "https://questhub.eco",
-  githubUrl: "https://github.com/Evobiosys/questhub.eco",
-  description: "Event-sourced Rust server behind Caddy on a self-run VPS. 96 public quests."
 }, {
   name: "Political Model",
   url: "https://idea2.site/spectrum",

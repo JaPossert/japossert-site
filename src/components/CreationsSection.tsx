@@ -1,7 +1,17 @@
 import { ExternalLink, Github } from "lucide-react";
-import { creations, shipped, writings, pitches } from "@/data/works";
+import { creations, shipped, writings, pitches, type Work } from "@/data/works";
+
+const MajorCard = ({ item }: { item: Work }) => <a href={item.url} target="_blank" rel="noopener noreferrer" className="group block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link text-center">
+    <div className="flex items-center justify-center space-x-3 mb-4">
+      <h4 className="font-heading text-xl md:text-2xl text-primary">{item.name}</h4>
+      <ExternalLink className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+    </div>
+    <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
+  </a>;
 
 const CreationsSection = () => {
+  const [majorTop, majorRest] = [creations.slice(0, 2), creations.slice(2)];
+
   return <section className="py-20 px-6 max-w-4xl mx-auto">
       <div className="text-center space-y-12">
         <div>
@@ -20,14 +30,11 @@ const CreationsSection = () => {
           </h3>
           <div className="w-8 h-px bg-primary mx-auto"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {creations.map(item => <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="group block p-8 rounded-xl bg-card/40 backdrop-blur-sm border border-border/40 glow-hover presence-link text-center">
-                <div className="flex items-center justify-center space-x-3 mb-4">
-                  <h4 className="font-heading text-xl md:text-2xl text-primary">{item.name}</h4>
-                  <ExternalLink className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <p className="text-ethereal text-sm leading-relaxed">{item.description}</p>
-              </a>)}
+            {majorTop.map(item => <MajorCard key={item.name} item={item} />)}
           </div>
+          {majorRest.length > 0 && <div className="grid grid-cols-1 gap-6 max-w-sm mx-auto">
+              {majorRest.map(item => <MajorCard key={item.name} item={item} />)}
+            </div>}
         </div>
 
         <div className="space-y-6 text-left">
