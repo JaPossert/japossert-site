@@ -10,7 +10,7 @@ const OffersSection = () => {
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mb-8"></div>
           <p className="text-cosmic text-lg leading-relaxed max-w-xl mx-auto">
-            Prototype coding &amp; architecture.{" "}
+            Prototype coding incl. code-architecture.{" "}
             <span className="text-primary font-medium">&euro;250 / hour.</span>
           </p>
           <p className="text-ethereal text-sm max-w-xl mx-auto mt-3">

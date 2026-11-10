@@ -6,11 +6,6 @@ export type Work = {
 };
 
 export const creations: Work[] = [{
-  name: "QuestHub",
-  url: "https://questhub.eco",
-  field: "Community Infrastructure",
-  description: "Event-sourced Rust server behind Caddy on a self-run VPS. 96 public quests."
-}, {
   name: "Transparent.News",
   url: "https://transparent.news",
   field: "Media",
